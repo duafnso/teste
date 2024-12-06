@@ -1,4 +1,4 @@
-// Nome: Seu Nome
+// Jose Eduardo Afonso - 2151324
 public class Serie extends Conteudo {
     private int temporadas;
 
