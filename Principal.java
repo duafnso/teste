@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
-// Jose Eduardo Afonso - 2151324
+// Jose Eduardo Afonso Capellotto França RA: 2151324
+import java.util.Scanner;
+
 public class Principal {
     public static void main(String[] args) {
         PlataformaStreaming plataforma = new PlataformaStreaming();
@@ -14,7 +16,7 @@ public class Principal {
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpar o buffer
+            scanner.nextLine(); // Consumir a quebra de linha
 
             switch (opcao) {
                 case 1:
@@ -30,7 +32,7 @@ public class Principal {
                         conteudo.setGenero(scanner.nextLine());
                         System.out.print("Digite a duração (minutos): ");
                         conteudo.setDuracao(scanner.nextInt());
-                        scanner.nextLine(); // Limpar o buffer
+                        scanner.nextLine(); // Consumir a quebra de linha
                         System.out.print("Digite o diretor: ");
                         ((Filme) conteudo).setDiretor(scanner.nextLine());
                     } else if (tipo.equalsIgnoreCase("Serie")) {
@@ -41,7 +43,7 @@ public class Principal {
                         conteudo.setGenero(scanner.nextLine());
                         System.out.print("Digite a duração (minutos): ");
                         conteudo.setDuracao(scanner.nextInt());
-                        scanner.nextLine(); // Limpar o buffer
+                        scanner.nextLine(); // Consumir a quebra de linha
                         System.out.print("Digite o número de temporadas: ");
                         ((Serie) conteudo).setTemporadas(scanner.nextInt());
                     } else if (tipo.equalsIgnoreCase("Documentario")) {
@@ -52,7 +54,7 @@ public class Principal {
                         conteudo.setGenero(scanner.nextLine());
                         System.out.print("Digite a duração (minutos): ");
                         conteudo.setDuracao(scanner.nextInt());
-                        scanner.nextLine(); // Limpar o buffer
+                        scanner.nextLine(); // Consumir a quebra de linha
                         System.out.print("Digite o narrador: ");
                         ((Documentario) conteudo).setNarrador(scanner.nextLine());
                     } else {
@@ -60,10 +62,14 @@ public class Principal {
                         continue;
                     }
 
-                    try {
+                    // Verificar se o conteúdo está completo antes de adicionar
+                    if (conteudo.getTitulo() == null || conteudo.getTitulo().isEmpty() ||
+                        conteudo.getGenero() == null || conteudo.getGenero().isEmpty() ||
+                        conteudo.getDuracao() <= 0) {
+                        System.out.println("Erro: O conteúdo não pode ter campos vazios ou inválidos.");
+                    } else {
                         plataforma.adicionarConteudo(conteudo);
-                    } catch (ConteudoInvalidoException e) {
-                        System.out.println("Erro: " + e.getMessage());
+                        System.out.println("Conteúdo adicionado com sucesso!");
                     }
                     break;
 
