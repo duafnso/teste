@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-// Nome: Seu Nome
+// Jose Eduardo Afonso - 2151324
 public class PlataformaStreaming implements Gerenciavel {
     private List<Conteudo> conteudos;
 
