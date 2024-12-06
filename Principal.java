@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// Nome: Seu Nome
+// Jose Eduardo Afonso - 2151324
 public class Principal {
     public static void main(String[] args) {
         PlataformaStreaming plataforma = new PlataformaStreaming();
