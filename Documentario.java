@@ -1,4 +1,4 @@
-// Nome: Seu Nome
+// Jose Eduardo Afonso - 2151324
 public class Documentario extends Conteudo {
     private String narrador;
 
