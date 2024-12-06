@@ -1,4 +1,4 @@
-// Nome: Seu Nome
+// Jose Eduardo Afonso - 2151324
 public abstract class Conteudo {
     private String titulo;
     private String genero;
